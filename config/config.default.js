@@ -1,19 +1,19 @@
 /* eslint valid-jsdoc: "off" */
 
-'use strict';
+"use strict";
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-module.exports = appInfo => {
+module.exports = (appInfo) => {
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1640057684331_5866';
+  config.keys = appInfo.name + "_1640057684331_5866";
 
   // add your middleware config here
   config.middleware = [];
@@ -26,5 +26,10 @@ module.exports = appInfo => {
   return {
     ...config,
     ...userConfig,
+    security: {
+      csrf: {
+        enable: false,
+      },
+    },
   };
 };

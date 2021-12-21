@@ -49,7 +49,7 @@ $ npm stop
 - dev 开发环境使用，修改代码不需要重启服务。
 - stop 用来停止服务。
 
-### get 传参
+### get 请求
 
 #### 自由模式传参
 
@@ -66,3 +66,19 @@ const { name, age } = ctx.query;
 ```js
 const { name, age } = ctx.params;
 ```
+
+### post 请求
+
+- 使用 post 之前需要先在 config.default.js 文件里关闭 csrf 安全防范
+
+```js
+module.exports = {
+    security:{
+        csrf:{
+            enable:false;
+        }
+    }
+};
+```
+
+- 需要在 ctx.request.body 获取到参数

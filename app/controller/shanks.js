@@ -31,6 +31,17 @@ class shanksController extends Controller {
     const { name, place, friend } = ctx.params;
     ctx.body = `我是${name},我今天和${friend}在${place}玩`;
   }
+
+  //post传参
+  async post() {
+    const { ctx } = this;
+    console.log(ctx);
+    ctx.body = {
+      code: 200,
+      msg: "请求成功",
+      data: ctx.request.body,
+    };
+  }
 }
 
 module.exports = shanksController;
