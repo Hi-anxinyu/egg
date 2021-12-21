@@ -10,4 +10,11 @@ describe('text/app/controller/shanks.text.js', () => {
       .expect('<h1>This is Shanks</h1>')
       .expect(200);
   });
+  it('should GET /eat', async () => {
+    return app
+      .httpRequest()
+      .get('/eat')
+      .expect('<h1>异步单元测试</h1>')
+      .expect(200);
+  });
 });
