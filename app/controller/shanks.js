@@ -42,6 +42,12 @@ class shanksController extends Controller {
       data: ctx.request.body,
     };
   }
+
+  async getInfo() {
+    const ctx = this.ctx;
+    const res = await ctx.service.shanks.getInfo(ctx.query.id);
+    ctx.body = res;
+  }
 }
 
 module.exports = shanksController;

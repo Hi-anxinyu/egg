@@ -11,4 +11,5 @@ module.exports = app => {
   router.get('/play', controller.shanks.play);
   router.get('/play2/:name/:place/:friend', controller.shanks.play2);
   router.post('/post',controller.shanks.post);
+  router.get('/getinfo',controller.shanks.getInfo);
 };

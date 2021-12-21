@@ -35,6 +35,10 @@ $ npm stop
 
   - controller 控制器目录
   - router.js 项目的路由配置文件
+  - service 封装的抽象层，所有与数据库交互的代码全部放在 service 模块
+    - 保持 controller 逻辑更加简单
+    - 独立性，service 可以被多个 controller 进行复用
+    - 写测试用例简单
 
 - config 项目的配置目录
 
@@ -59,6 +63,8 @@ $ npm stop
 ```js
 const { name, age } = ctx.query;
 ```
+
+#### 严格传参模式
 
 - 严格模式传参 路由路径规定参数 如 /api/:name/:age
 - 获取参数
