@@ -88,3 +88,35 @@ module.exports = {
 ```
 
 - 需要在 ctx.request.body 获取到参数
+
+### EJS 服务端渲染
+
+- 使用 ejs 模板引擎进行服务端渲染
+
+  - 需要下载插件 egg-view-ejs
+
+- 开启配置
+
+```js
+//plugin.js
+"use strict";
+exports.ejs = {
+  enable: true, //开启ejs
+  package: "egg-view-ejs", //指定开启包名
+};
+//config.default.js
+config.view = {
+  mapping: {
+    ".html": "ejs", //所有所有html文件都使用ejs模板引擎解析
+  },
+};
+
+config.ejs = {};
+```
+
+- 使用方法
+
+```js
+//在app下的view文件夹创建.html文件
+await ctx.render("xxx.html");
+```

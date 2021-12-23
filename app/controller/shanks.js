@@ -5,7 +5,12 @@ const Controller = require("egg").Controller;
 class shanksController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = "<h1>This is Shanks</h1>";
+    await ctx.render("shanks.html", {
+      id: 5,
+      name: "加里奥",
+      age: 50,
+      skills: ["烤鱼", "麻辣香锅", "牛头,猪头,羊头"],
+    });
   }
 
   async eat() {

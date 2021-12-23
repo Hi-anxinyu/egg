@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>大家好，欢迎来到没脑子川菜馆。</h1>
+    <p>我是<%= id%>号厨师<%= name%>。</p>
+    <p>今年<%= age%>岁</p>
+    <p>我会做的菜</p>
+    <ul>
+        <% for(let i=0;i<skills.length;i++){ %>
+            <li><%= skills[i]%></li>
+        <%}%>
+    </ul>
+</body>
+</html>
