@@ -53,6 +53,59 @@ class shanksController extends Controller {
     const res = await ctx.service.shanks.getInfo(ctx.query.id);
     ctx.body = res;
   }
+
+  //设置cookie
+  async add() {
+    const ctx = this.ctx;
+    try {
+      ctx.cookies.set("user", "shanks");
+      ctx.body = {
+        code: 200,
+        message: "设置成功",
+      };
+    } catch (error) {
+      ctx.body = error;
+    }
+  }
+
+  //设置cookie
+  async del() {
+    const ctx = this.ctx;
+    try {
+      ctx.cookies.set("user", null);
+      ctx.body = {
+        code: 200,
+        message: "设置成功",
+      };
+    } catch (error) {
+      ctx.body = error;
+    }
+  }
+
+  //编辑cookie
+  async editor() {
+    const ctx = this.ctx;
+    try {
+      ctx.cookies.set("user", "localhost");
+      ctx.body = {
+        code: 200,
+        message: "设置成功",
+      };
+    } catch (error) {
+      ctx.body = error;
+    }
+  }
+
+  //查看cookie
+  async show() {
+    const ctx = this.ctx;
+    const user = ctx.cookies.get("user");
+    console.log(user);
+    ctx.body = {
+      code: 200,
+      message: "查看成功",
+    };
+  }
 }
 
 module.exports = shanksController;

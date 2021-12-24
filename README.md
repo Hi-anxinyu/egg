@@ -120,3 +120,19 @@ config.ejs = {};
 //在app下的view文件夹创建.html文件
 await ctx.render("xxx.html");
 ```
+
+### cookie 的增删改查
+
+```js
+//创建cookie
+ctx.cookie.set("xx", "xxx");
+
+//删除cookie
+ctx.cookie.del("xx", "xxx");
+
+//修改cookie
+ctx.cookie.set("xx", "xxx");
+
+//查看cookie
+const res = ctx.cookie.get("xx");
+```

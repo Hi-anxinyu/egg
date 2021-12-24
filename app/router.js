@@ -14,4 +14,8 @@ module.exports = (app) => {
   router.get("/getinfo", controller.shanks.getInfo);
   router.get("/index", controller.index.echo);
   router.get("/getlist", controller.vote.getList);
+  router.post("/add", controller.shanks.add);
+  router.post("/del", controller.shanks.del);
+  router.post("/editor", controller.shanks.editor);
+  router.post("/show", controller.shanks.show);
 };

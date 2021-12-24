@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>大家好，欢迎来到没脑子川菜馆。</h1>
+    <button onclick='add()'>添加cookie</button>
+    <button onclick='del()'>删除cookie</button>
+    <button onclick='editor()'>修改cookie</button>
+    <button onclick='show()'>查看cookie</button>
     <p>我是<%= id%>号厨师<%= name%>。</p>
     <p>今年<%= age%>岁</p>
     <p>我会做的菜</p>
@@ -16,5 +20,39 @@
             <li><%= skills[i]%></li>
         <%}%>
     </ul>
+    <script>
+        const add = () =>{
+            fetch('/add',{
+                method:'POST',
+                headers:{
+                    "Context-type":"appplication/json",
+                }
+            })
+        }
+        const del = () =>{
+            fetch('/del',{
+                method:'POST',
+                headers:{
+                    "Context-type":"appplication/json",
+                }
+            })
+        }
+        const editor = () =>{
+            fetch('/editor',{
+                method:'POST',
+                headers:{
+                    "Context-type":"appplication/json",
+                }
+            })
+        }
+        const show = () =>{
+            fetch('/show',{
+                method:'POST',
+                headers:{
+                    "Context-type":"appplication/json",
+                }
+            })
+        }
+    </script>
 </body>
 </html>
